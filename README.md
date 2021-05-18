@@ -1,14 +1,14 @@
    ## usersテーブル
-| Column         | Type               | Options                         |
-| -------------- | -----------------  | ------------------------------- |
-| nickname       | string             | null: false, unique: true       |
-| email          | string             | null: false, unique: true       |
-| password       | encrypted_password | null: false                     |
-| last_name      | string             | null: false                     |
-| first_name     | string             | null: false                     |
-| last_name_kana | string             | null: false                     |
-| first_name_kana| string             | null: false                     |
-| birthday       | date               | null: false                     |
+| Column                   | Type               | Options                         |
+| ------------------------ | -----------------  | ------------------------------- |
+| nickname                 | string             | null: false, unique: true       |
+| email                    | string             | null: false, unique: true       |
+| encrypted_password       | string             | null: false                     |
+| last_name                | string             | null: false                     |
+| first_name               | string             | null: false                     |
+| last_name_kana           | string             | null: false                     |
+| first_name_kana          | string             | null: false                     |
+| birthday                 | date               | null: false                     |
 
 ### Association
 has_many :items
@@ -21,7 +21,7 @@ has_many :orders
 | title              | string     | null: false                     |
 | price              | integer    | null: false                     |
 | user               | references | null: false, foreign_key: true  |
-| category           | string     | null: false                     |
+| category_id        | integer    | null: false                     |
 | condition_id       | integer    | null: false                     |
 |delivery_option1_id | integer    | null: false                     |
 |delivery_option2_id | integer    | null: false                     |
@@ -45,8 +45,7 @@ has_one :order
 
 ### Association
 belongs_to :order
-has_many :items
-has_many :orders
+
 
    
    ## ordersテーブル
