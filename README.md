@@ -25,7 +25,8 @@ has_many :orders
 | condition_id       | integer    | null: false                     |
 |delivery_option1_id | integer    | null: false                     |
 |delivery_option2_id | integer    | null: false                     |
-| delivery_from_id   | integer    | null: false                     |
+| prefecture_id      | integer    | null: false                     |
+| description        | text       | null: false                     |
 
 ### Association
 belongs_to :user
@@ -33,15 +34,15 @@ has_one :order
 
    
    ## addressesテーブル
-| Column         | Type           | Options                         |
-| -------------- | -------------- | ------------------------------- |
-| order          | references     | null: false, foreign_key: true  |
-| postal_code    | string         | null: false                     |
-| prefecture_id  | integer        | null: false                     |
-| address1       | string         | null: false                     |
-| address2       | string         | null: false                     |
-| building       | string         |                                 |
-| phone_number   | string         | null: false                     |
+| Column            | Type           | Options                         |
+| ----------------- | -------------- | ------------------------------- |
+| order             | references     | null: false, foreign_key: true  |
+| postal_code       | string         | null: false                     |
+| prefecture_id     | integer        | null: false                     |
+| address1          | string         | null: false                     |
+| address2          | string         | null: false                     |
+| building          | string         |                                 |
+| phone_number      | string         | null: false                     |
 
 ### Association
 belongs_to :order
