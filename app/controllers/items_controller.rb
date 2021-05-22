@@ -20,6 +20,6 @@ end
 
   private
   def item_params
-    params.require(:item).permit(:title, :price, :user, :category_id, :condition_id, :delivery_fee_id, :scheduled_delivery_id, :prefecture_id, :description)
+    params.require(:item).permit(:title, :price, :category_id, :condition_id, :delivery_fee_id, :scheduled_delivery_id, :prefecture_id, :description).merge(user_id: current_user.id)
   end
 end
