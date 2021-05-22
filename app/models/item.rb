@@ -20,4 +20,5 @@ class Item < ApplicationRecord
   belongs_to :delivery_fee
   belongs_to :prefecture
   belongs_to :scheduled_delivery
+  has_one_attached :image
 end
