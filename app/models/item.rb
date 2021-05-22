@@ -3,8 +3,9 @@ class Item < ApplicationRecord
   with_options presence: true do
   validates :title
   validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}, format: {with: /\A[0-9]+\z/}
-  validates :user, presence: true
+  validates :user_id, presence: true
   validates :description
+  validates :image
     with_options numericality: { other_than: 1 } do
   validates :category_id
   validates :condition_id
