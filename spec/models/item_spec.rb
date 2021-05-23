@@ -77,6 +77,31 @@ RSpec.describe Item, type: :model do
           @item.valid?
           expect(@item.errors.full_messages).to include("Price is not a number")
         end
+        it 'category_idが1では出品できない' do
+          @item.category_id = 1
+          @item.valid?
+          expect(@item.errors.full_messages).to include("Category must be other than 1")
+        end
+        it 'condition_idが1では出品できない' do
+          @item.condition_id = 1
+          @item.valid?
+          expect(@item.errors.full_messages).to include("Condition must be other than 1")
+        end
+        it 'delivery_idが1では出品できない' do
+          @item.delivery_fee_id = 1
+          @item.valid?
+          expect(@item.errors.full_messages).to include("Delivery fee must be other than 1")
+        end
+        it 'prefecture_idが1では出品できない' do
+          @item.prefecture_id = 1
+          @item.valid?
+          expect(@item.errors.full_messages).to include("Prefecture must be other than 1")
+        end
+        it 'scheduled_delivery_idが1では出品できない' do
+          @item.scheduled_delivery_id = 1
+          @item.valid?
+          expect(@item.errors.full_messages).to include("Scheduled delivery must be other than 1")
+        end
       end
     end
   end
