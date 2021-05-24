@@ -26,6 +26,14 @@ end
     @item = Item.find(params[:id])
  end
 
+ def update
+   @item = Item.new(item_params)
+   if @item.save
+    redirect_to action: :show
+   else
+    render "new"
+ end
+
 
   private
   def item_params
