@@ -27,11 +27,11 @@ end
  end
 
  def update
-   @item = Item.new(item_params)
-   if @item.save
+    item = Item.find(params[:id])
+   if item.update(item_params)
     redirect_to action: :show
    else
-    render "new"
+    render "edit"
    end
  end
 
