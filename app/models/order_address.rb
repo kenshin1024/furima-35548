@@ -1,6 +1,6 @@
-def OrderAddress
+class OrderAddress
   include ActiveModel::Model
-  attr_acccessor :order_id, :postal_code, :prefecture_id, :city, :address, :building, :phone_number, :user_id, :item_id
+  attr_accessor :order_id, :postal_code, :prefecture_id, :city, :address, :building, :phone_number, :user_id, :item_id
 
   with_options presence: true do
     validates :postal_code
@@ -9,11 +9,9 @@ def OrderAddress
     validates :address
     validates :building
     validates :phone_number
-    with_options foreign_key: true do
-      validates :order_id 
-      validates :user_id
-      validates :item_id
-    end
+    validates :order_id
+    validates :user_id
+    validates :item_id
   end
  
   def save
