@@ -45,7 +45,7 @@ end
   end
 
   def move_to_index
-    unless current_user.id == Item.find(params[:id]).user_id
+    unless current_user.id == Item.find(params[:id]).user_id && Item.find(params[:id]).order.present? == false
       redirect_to action: :index
     end
   end
